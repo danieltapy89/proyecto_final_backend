@@ -48,8 +48,8 @@ const eliminarsuperHeroe = async (req, res) => {
 
 const consumirApi = async (req, res) => {
     try {
-        const documentacion = await axios.get('https://gateway.marvel.com:443/v1/public/characters?apikey=');
-    res.status(200).json({ucm: documentacion.data})
+        const documentacion = await axios.get('https://gateway.marvel.com/v1/public/characters?ts=1&apikey=510d279c911349a5ad96791676e62d93&hash=98d8ad73e4752ada56aa1206d591ec76');
+    res.status(200).json({ucm: documentacion.data.data.results})
     } catch (error) {
         res.status(501).json({error})
     }
